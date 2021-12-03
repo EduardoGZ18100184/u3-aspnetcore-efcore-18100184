@@ -52,6 +52,35 @@ namespace u3_aspnetcore_efcore_18100184.Controllers
             return RedirectToAction(nameof(Index));
         }
 
+        public IActionResult AgregarSeries()
+        {
+            Serie serie = new Serie { NombreSerie = "Doctor Who", IdProductora = 1};
+            //insertar en la bd
+            db.Add(serie);
+            db.SaveChanges();
+
+            Serie serie2 = new Serie { NombreSerie = "Breaking Bad" , IdProductora = 2 };
+            //insertar en la bd
+            db.Add(serie2);
+            db.SaveChanges();
+
+            Serie serie3 = new Serie { NombreSerie = "Mr. Robot", IdProductora = 3};
+            //insertar en la bd
+            db.Add(serie3);
+            db.SaveChanges();
+
+            Serie serie4 = new Serie { NombreSerie = "Black Mirror", IdProductora = 4 };
+            //insertar en la bd
+            db.Add(serie4);
+            db.SaveChanges();
+
+            Serie serie5 = new Serie { NombreSerie = "Sherlock", IdProductora = 5 };            //insertar en la bd
+            db.Add(serie5);
+            db.SaveChanges();
+
+            return RedirectToAction(nameof(Index));
+        }
+
         public IActionResult NuevaSerie()
         {
             ViewBag.Productora = new SelectList(db.Productoras, "IdProductora", "NombreProductora");
