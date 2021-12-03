@@ -15,6 +15,7 @@ namespace u3_aspnetcore_efcore_18100184
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
+            //verificando cambios en github 7>17 am
         }
 
         public IConfiguration Configuration { get; }
