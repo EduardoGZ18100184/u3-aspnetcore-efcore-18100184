@@ -1,0 +1,34 @@
+﻿@model Serie
+<h1>Editar Personaje</h1>
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="EditarSerie" method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="SerieId" />
+            <div class="form-group">
+                <label asp-for="NombreSerie" class="control-label"></label>
+                <input asp-for="NombreSerie" class="form-control" />
+                <span asp-validation-for="NombreSerie" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="IdProductora" class="control-label"></label>
+                <select asp-for="IdProductora" class="form-control" asp-items="ViewBag.Productora"></select>
+                <span asp-validation-for="IdProductora" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <div class="form-group">
+                    <input type="submit" class="btn btn-primary" />
+                </div>
+            </div>
+        </form>
+    </div>
+
+
+</div>
+
+<div>
+    <a asp-action="Index">Regresar al index</a>
+</div>

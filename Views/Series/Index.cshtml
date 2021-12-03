@@ -1,0 +1,48 @@
+﻿@model IEnumerable<Serie>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Listado de Serie</h1>
+<p>
+    <a class="btn btn-primary" asp-action="NuevaSerie">Agregar Serie</a>
+</p>
+<p>
+    <a class="btn btn-primary" asp-action="AgregarProductoras">Agrega 5 Productoras</a>
+</p>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.SerieId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NombreSerie)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IdProductora)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var serie in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => serie.SerieId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => serie.NombreSerie)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => serie.IdProductora)
+                </td>
+                <td>
+                    <a asp-action="EditarSerie" asp-route-id="@serie.SerieId">Editar</a> |
+                    <a asp-action="EliminarSerie" asp-route-id="@serie.SerieId">Eliminar</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

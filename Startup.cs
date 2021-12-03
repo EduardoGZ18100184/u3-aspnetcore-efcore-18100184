@@ -53,7 +53,7 @@ namespace u3_aspnetcore_efcore_18100184
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Home}/{action=Index}/{id?}");
+                    pattern: "{controller=Series}/{action=Index}/{id?}");
             });
         }
     }
