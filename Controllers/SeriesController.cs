@@ -22,7 +22,7 @@ namespace u3_aspnetcore_efcore_18100184.Controllers
             var listadoSeries = db.Series.ToList();
             return View(listadoSeries);
         }
-
+        
         public IActionResult AgregarProductoras()
         {
             Productora productora = new Productora { NombreProductora = "Grupo Secuoya" };
